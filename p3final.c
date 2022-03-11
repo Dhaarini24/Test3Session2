@@ -25,7 +25,7 @@ void output(int n, int r, int ncr)
 }
 int main()
 {
-  int result,n,r,ncr;
+  int n,r,ncr;
   input_n_and_r(&n,&r);
   find_ncr(n,r,&ncr);
   output(n,r,ncr);
