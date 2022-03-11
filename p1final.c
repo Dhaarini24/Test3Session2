@@ -4,6 +4,17 @@ void input(int *num1,int *den1, int *num2, int *den2)
   printf("enter the numerator 1 and 2 , denominator 1 and 2\n");
   scanf("%d %d %d %d",num1,den1,num2,den2);
 }
+int gcd(int a,int b)
+{
+  int t;
+    while (b!=0)
+      {
+        t = b;
+        b = a%b;
+        a = t;
+      }
+    return a;
+}
 void add(int num1,int den1,int num2,int den2,int *num3,int *den3)
 {
   *num3=num1*den2+num2*den1;
