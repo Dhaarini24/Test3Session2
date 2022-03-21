@@ -7,11 +7,12 @@ int input_array_size()
   return n;
 }
 void input_array(int n, int a[n])
-{ int i;  
+{ 
+  int i;  
   for(i=0;i<n;i++)
   {
-  printf("enter the array element %d\n",i);
-  scanf("%d",&a[i]);
+    printf("enter the array element %d\n",i);
+    scanf("%d",&a[i]);
   }
 }
 int find_largest(int n, int a[n])
@@ -24,7 +25,7 @@ int find_largest(int n, int a[n])
 }
 void out_put(int n, int a[n], int largest)
 {
-printf("Largest element is present at index %d and its value is %d.\n",largest,a[largest]);
+ printf("the index of the largest number %d in an array is %d\n",largest,a[largest]);
 }
 int main()
 {

@@ -3,6 +3,17 @@ typedef struct fraction
 {
   int num,den;
 }fraction;
+int find_gcd(int a, int b)
+{
+  int t;
+    while (b!=0)
+      {
+        t = b;
+        b = a%b;
+        a = t;
+      }
+    return a;
+}
 fraction input()
 {
   fraction f;
