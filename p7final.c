@@ -1,56 +1,43 @@
-#include <stdio.h>
-typedef struct fraction
+#include<stdio.h>
+struct _fraction
 {
   int num,den;
-}fraction;
-int find_gcd(int a, int b)
+};
+typedef struct _fraction fraction;
+int find_gcd(int a,int b)
 {
-  int t;
-    while (b!=0)
-      {
-        t = b;
-        b = a%b;
-        a = t;
-      }
-    return a;
+  int minimum=a;
+  
+   if( b<minimum)
+  for ( int i=minimum;i>0;i--)
+    if(a%i==0 && b%i==0)
+      return i;
 }
-fraction input()
+fraction input_fraction( fraction *f1,fraction *f2)
 {
-  fraction f;
-  printf("Enter the numerator and denomenator of the fraction:");
-  scanf("%d %d",&f.num,&f.den);
-  return f;
+  printf("enter the numerator and denomenator\n");
+  scanf("%d%d%d%d",&f1->num,&f1->den,&f2->num,&f2->den);
 }
-fraction add(fraction f1,fraction f2)
+
+
+fraction add_fractions(fraction f1,fraction f2,fraction *f3)
 {
-  fraction sum;
-  int n1,n2,d1,d2;
-  n1=f1.num;
-  n2=f2.num;
-  d1=f1.den;
-  d2=f2.den;
-  sum.den=d1*d2;
-    sum.num=(n1*d2)+(n2*d1);
-    for(int i=1;i<=sum.den;i++)
-      {
-        if(sum.den%i == 0 && sum.num%i == 0)
-        {
-            sum.den=sum.den/i;
-            sum.num=sum.num/i;
-        }
-      }
-  return sum;
+ f3->den=f1.den*f2.den;
+  f3->num=f1.num*f2.den+f2.num*f1.den;
+  int gcd=find_gcd(f3->num,f3->den);
+  f3->num=f3->num/gcd;
+  f3->den=f3->den/gcd;
 }
-void output(fraction f1,fraction f2,fraction sum)
+void output(fraction f1, fraction f2, fraction f3)
 {
-  printf("%d/%d + %d/%d is %d/%d\n",f1.num,f1.den,f2.num,f2.den,sum.num,sum.den);
+  printf("sum of %d/%d and %d/%d is %d/%d\n",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den);
 }
+
 int main()
 {
-  fraction f1,f2,sum;
-  f1=input();
-  f2=input();
-  sum=add(f1,f2);
-  output(f1,f2,sum);
-  return 0;
+  fraction f1,f2,f3;
+  input_fraction(&f1,&f2);
+  add_fractions(f1,f2,&f3);
+  output(f1,f2,f3);
+  return 0;  
 }

@@ -1,1 +1,45 @@
-
+Breakpoint 1, main () at p7final.c:37
+37  {
+(gdb) n
+39    input_fraction(&f1,&f2);
+(gdb) s
+input_fraction (f1=0x7ffccc4ceb80, f2=0x7ffccc4ceb88) at p7final.c:18
+18    printf("enter the numerator and denomenator\n");
+(gdb) n
+enter the numerator and denomenator
+19    scanf("%d%d%d%d",&f1->num,&f1->den,&f2->num,&f2->den);
+(gdb) n
+n
+20  }
+(gdb) n
+main () at p7final.c:40
+40    add_fractions(f1,f2,&f3);
+(gdb) s
+add_fractions (f1=..., f2=..., f3=0x7ffccc4ceb90) at p7final.c:25
+25   f3->den=f1.den*f2.den;
+(gdb) n
+26    f3->num=f1.num*f2.den+f2.num*f1.den;
+(gdb) n
+27    int gcd=find_gcd(f3->num,f3->den);
+(gdb) 
+n
+n
+28    f3->num=f3->num/gcd;
+(gdb) n
+29    f3->den=f3->den/gcd;
+(gdb) n
+30  }
+(gdb) n
+main () at p7final.c:41
+41    output(f1,f2,f3);
+(gdb) s
+output (f1=..., f2=..., f3=...) at p7final.c:33
+33    printf("sum of %d/%d and %d/%d is %d/%d\n",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den);
+(gdb) n
+sum of -1461712560/21902 and -1461713312/21902 is 124750056/119924401
+34  }
+(gdb) n
+main () at p7final.c:42
+42    return 0;  
+(gdb) n
+43  }(gdb) 

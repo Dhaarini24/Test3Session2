@@ -1,1 +1,69 @@
-
+Breakpoint 1, main () at p8final.c:68
+68  {
+(gdb) n
+71      n=input_n();
+(gdb) s
+input_n () at p8final.c:7
+7   {
+(gdb) n
+9       printf("Enter the number of numbers to be added\n");
+(gdb) n
+Enter the number of numbers to be added
+10      scanf("%d",&n);
+(gdb) n
+n
+11      return n;
+(gdb) n
+12  }
+(gdb) n
+main () at p8final.c:72
+72      frac f[n];
+(gdb) s
+73      input_n_fractions(n,f);
+(gdb) s
+input_n_fractions (n=0, f=0x7ffe4fd99620) at p8final.c:34
+34      for(int i=0;i<n;i++)
+(gdb) n
+38  }
+(gdb) n
+main () at p8final.c:74
+74      result=add_n_fractions(n,f);
+(gdb) s
+add_n_fractions (n=0, f=0x7ffe4fd99620) at p8final.c:48
+48      frac temp1={0};
+(gdb) n
+49      temp1.num=0;
+(gdb) n
+50      temp1.den=1;
+(gdb) n
+51      for(int i=0;i<n;i++)
+(gdb) n
+55      return temp1;
+(gdb) n
+56  }
+(gdb) n
+main () at p8final.c:75
+75      gcd=find_gcd(result.num,result.den);
+(gdb) s
+find_gcd (a=0, b=1) at p8final.c:16
+16      for( i=1;i<=b;i++)
+(gdb) n
+18       if(a%i==0&&b%i==0)
+(gdb) n
+20          gcd=i;
+(gdb) n
+16      for( i=1;i<=b;i++)
+(gdb) n
+23    return gcd;
+(gdb) n
+24  }
+(gdb) n
+main () at p8final.c:76
+76      sum.num=result.num/gcd;
+(gdb) s
+77      sum.den=result.den/gcd;
+(gdb) n
+78      output(n,f,sum);
+(gdb) n
+79      return 0;
+(gdb) n

@@ -1,1 +1,43 @@
-
+Breakpoint 1, main () at p5final.c:31
+31  {
+(gdb) n
+33    n=input_array_size();
+(gdb) s
+input_array_size () at p5final.c:3
+3   {
+(gdb) n
+5     printf("enter the array size\n");
+(gdb) n
+enter the array size
+6     scanf("%d",&n);
+(gdb) n
+n
+7     return n;
+(gdb) n
+8   }
+(gdb) n
+main () at p5final.c:34
+34    int a[n];
+(gdb) s
+35    input_array(n,a);
+(gdb) s
+input_array (n=0, a=0x7ffc30c0d760) at p5final.c:12
+12    for(i=0;i<n;i++)
+(gdb) n
+17  }
+(gdb) n
+main () at p5final.c:36
+36    largest=find_largest(n,a);
+(gdb) n
+37    out_put(n,a,largest);
+(gdb) s
+out_put (n=0, a=0x7ffc30c0d760, largest=0) at p5final.c:28
+28   printf("the index of the largest number %d in an array is %d\n",largest,a[largest]);
+(gdb) n
+the index of the largest number 0 in an array is 817944512
+29  }
+(gdb) n
+main () at p5final.c:38
+38    return 0;
+(gdb) n
+39  }(gdb) 
