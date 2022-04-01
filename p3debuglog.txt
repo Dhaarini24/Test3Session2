@@ -1,1 +1,40 @@
-
+Breakpoint 1, main () at p3final.c:27
+27  {
+(gdb) n
+29    input_n_and_r(&n,&r);
+(gdb) s
+input_n_and_r (n=0x7ffc43f448bc, r=0x7ffc43f448c0) at p3final.c:4
+4     printf("enter the n value\n");
+(gdb) n
+enter the n value
+5     scanf("%d",n);
+(gdb) 5
+5
+6     printf("enter the r value\n");
+(gdb) n
+enter the r value
+7     scanf("%d",r);
+(gdb) n
+2
+8   }
+(gdb) n
+main () at p3final.c:30
+30    find_ncr(n,r,&ncr);
+(gdb) s
+find_ncr (n=5, r=2, ncr=0x7ffc43f448c4) at p3final.c:20
+20    *ncr=fact(n)/(fact(r)*fact(n-r));
+(gdb) n
+21  }
+(gdb) n
+main () at p3final.c:31
+31    output(n,r,ncr);
+(gdb) s
+output (n=5, r=2, ncr=10) at p3final.c:24
+24   printf("the value %dc%d is %d",n,r,ncr); 
+(gdb) n
+25  }
+(gdb) n
+main () at p3final.c:32
+32    return 0;
+(gdb) n
+33  }(gdb) 
